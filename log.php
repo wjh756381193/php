@@ -22,7 +22,7 @@
 		}else{
 			$period=date('Ymd',mktime());
 		}
-        $filename=$filePrefix.$period.$filePrefix;
+        $filename=$filePrefix.$period.$fileSuffix;
         $fp=fopen($filename,'a');
 		if($fp){
 			$wr=fwrite($fp,$time."\n".$log."\n");
