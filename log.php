@@ -8,24 +8,24 @@
      */
 	
 	function AddLog($log='',$filePrefix='',$fileSuffix='.log',$time='day'){
-        $time=date('Y-m-d H:i:s',mktime());
+        $time1=date('Y-m-d H:i:s',time());
 		if($time=='year'){
-			$period=date('Y',mktime());
+			$period=date('Y',time());
 		}elseif($time=='month'){
-			$period=date('Ym',mktime());
+			$period=date('Ym',time());
 		}elseif($time=='hour'){
-			$period=date('YmdH',mktime());
+			$period=date('YmdH',time());
 		}elseif($time=='minute'){
-			$period=date('YmdHi',mktime());
+			$period=date('YmdHi',time());
 		}elseif($time=='second'){
-			$period=date('YmdHis',mktime());
+			$period=date('YmdHis',time());
 		}else{
-			$period=date('Ymd',mktime());
+			$period=date('Ymd',time());
 		}
         $filename=$filePrefix.$period.$fileSuffix;
         $fp=fopen($filename,'a');
 		if($fp){
-			$wr=fwrite($fp,$time."\n".$log."\n");
+			$wr=fwrite($fp,$time1."\n".$log."\n");
 			if($wr){
 				$close=fclose($fp);
 				if($close){
