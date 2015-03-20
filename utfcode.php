@@ -1,7 +1,7 @@
 <?php 
 	/**
-	* ×÷ÓÃ£º¸ñÊ½»¯µµ±àÂëÎªutf8
-	* Author £º wjh
+	* ä½œç”¨ï¼šæ ¼å¼åŒ–æ¡£ç¼–ç ä¸ºutf8
+	* Author ï¼š wjh
 	*/
 	function utf8(){
 		header("Content-Type:text/html;charset=utf-8");
