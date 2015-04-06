@@ -1,0 +1,78 @@
+解压所有文件夹
+第一个安装的是libxml2
+命令
+cd libxml2
+./configure --prefix=/usr/local/libxml2/
+make
+make install
+
+第二个安装的是libmcrypt
+cd libmcrypt
+./configure --prefix=/usr/local/libmcrypt/
+make
+make install
+cd libltdl/
+./configure --enable-ltdl-install
+make && make install
+
+第三个安装的是zlib 这个安装的过程中不建议指定安装路径
+cd ../../zlib.x.x.x
+./configure
+make && make install
+
+第四个安装的是libpng
+cd ../libpng1.2.31
+./configure --prefix=/usr/local/libpng/
+make && make install
+
+第五个安装的是jpeg6
+cd ../jpeg-6b
+mkdir /usr/local/jpeg6
+mkdir /usr/local/jpeg6/bin
+mkdir /usr/local/jpeg6/lib
+mkdir /usr/local/jpeg6/include
+mkdir -p /usr/local/jpeg6/man/man1
+./configure --prefix=/usr/local/jpeg6/ --enable-shared --enable-static
+make && make install
+
+第六个安装的是freetype
+cd ../freetype-2.x.x
+./configure --prefix=/usr/local/freetype/
+make && make install
+
+第七个安装的是autoconf
+cd ../autoconf-x.x.x
+./configure 
+make && make install
+
+第八个安装的是gd2
+cd ../libgd2.x.x
+./configure --prefix=/usr/local/gd2/ --with-jpeg=/usr/local/jpeg6/ --with-freetype=/usr/local/freetype/
+make && make install
+
+第九个安装的是apache
+cd ../httpd-x.x.x
+./configure --prefix=/usr/local/apache2/ --sysconfdir=/etc/httpd/ --with-included-apr --disable-userdir --enable-so --enable-deflate=shared --enable-expires=shared --enable-rewrite=shared --enable-static-support
+make && make install
+
+第十个安装的是ncruses
+cd ../ncurses-x.x
+./configure --with-shared --without-debug --without-ada --enable-overwrite
+make && make install
+
+第十一安装的是mysql 在安装mysql之前要创建相应的用户和组
+groupadd mysql
+useradd -g mysql mysql
+
+cd ../mysql-x.x.x
+./configure --prefix=/usr/local/mysql/ --with-extra-charsets=all
+make && make install
+cp support-files/my-medium.cnf /etc/my.cnf
+/usr/local/mysql/bin/mysql_install_db --user=mysql
+chown -R mysql:mysql /usr/local/mysql/
+/usr/localhost/mysql/bin/mysqld_safe --user=mysql
+
+第十二个安装的是php
+cd ../php5.x.x
+./configure --prefix=/usr/local/php/ --with-config-file-path=/etc/ --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=/usr/local/mysql/ --with-libxml-dir=/usr/local/libxml2/ --with-jpeg-dir=/usr/local/jpeg6/ --with-freetype-dir=/usr/local/freetype/ --with-gd=/usr/local/gd2/ --with-mcrypt=/usr/local/libmcrypt/ --with-mysqli=/usr/local/mysql/bin/mysql_config --enable-soap --enable-mbstring=all --enable-sockets
+make && make install
