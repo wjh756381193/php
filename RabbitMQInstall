@@ -1,0 +1,82 @@
+  644  yum install gcc gcc-c++
+  645  yum install zlib zlib-devel
+  646  wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz
+  647  ls
+  648  rm Python-2.7.6.tar.xz -f
+  649  ls
+  650  cd /
+  651  ls
+  652  cd /lamp/
+  653  ls
+  654  rz
+  655  ls
+  656  tar -xzf Python-2.7.6.tgz 
+  657  ls
+  658  cd Python-2.7.6
+  659  ./configure
+  660  make && make install
+  661  ls
+  662  vim /usr/bin/yum
+  663  yum -y install make gcc gcc-c++ kernel-devel m4 ncurses-devel openssl-devel  
+  664  yum -y install ncurses-devel
+  665  yum install ncurses-devel
+  666  wget http://www.erlang.org/download/otp_src_R16B02.tar.gz
+  667  ls
+  668  cd ..
+  669  wget http://www.erlang.org/download/otp_src_R16B02.tar.gz
+  670  ls
+  671  ll
+  672  rm otp_src_R16B02.tar.gz -f
+  673  ls
+  674  wget http://www.erlang.org/download/otp_src_R16B02.tar.gz
+  675  ls
+  676  rm otp_src_R16B02.tar.gz -f
+  677  ls
+  678  rz
+  679  ls
+  680  tar otp_src_R16B03.tar.gz -zxf
+  681  tar -zxf otp_src_R16B03.tar.gz
+  682  ls
+  683  mv otp_src_R16B03 otp_src_R16B
+  684  ls
+  685  mv otp_src_R16B erlang_R16B/
+  686  ls
+  687  cd erlang_R16B/
+  688  ls
+  689  ./configure --prefix=/usr/local/erlang --with-ssl --enable-threads --enable-smp-support --enable-kernel-poll --enable-hipe --without-javac
+  690  make && make install
+  691  vim /etc/profile
+  692  export PATH=$PATH:$ERL_HOME/bin
+  693  erl
+  694  vim /etc/profile
+  695  erl
+  696  vim /etc/profile
+  697  export PATH=$PATH:$ERL_HOME/bin
+  698  echo $PATH
+  699  echo $ERL_HOME
+  700  /usr/local/erlang/bin/erl
+  701  export PATH=$PATH:/usr/local/erlang/bin/
+  702  echo $PATH
+  703  erl
+  704  cd /lamp/
+  705  ls
+  706  wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.1.5/rabbitmq-server-3.1.5.tar.gz 
+  707  tar -zxf rabbitmq-server-3.1.5.tar.gz 
+  708  cd /usr/local/
+  709  yum install xmlto -y
+  710  cd /lamp/rabbitmq-server-3.1.5
+  711  ls
+  712  make
+  713  #make install TARGET_DIR=/opt/mq/rabbitmq SBIN_DIR=/opt/mq/rabbitmq/sbin MAN_DIR=/opt/mq/rabbitmq/man
+  714  make install TARGET_DIR=/opt/mq/rabbitmq SBIN_DIR=/opt/mq/rabbitmq/sbin MAN_DIR=/opt/mq/rabbitmq/man
+  715  cd /opt/mq/rabbitmq/sbin/
+  716  mkdir /etc/rabbitmq/
+  717  ls
+  718  ./rabbitmq-plugins enable rabbitmq_management
+  719  ./rabbitmq-server start &
+  720  vim /etc/hosts
+  721  ./rabbitmq-server start &
+  722  ps aux | grep 5672
+  723  ps aux | grep rabbitmq
+  724  netstat -tnlp | grep 5672
+  725  history >> rabbitInstallCommandsList

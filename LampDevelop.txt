@@ -72,7 +72,12 @@ cp support-files/my-medium.cnf /etc/my.cnf
 chown -R mysql:mysql /usr/local/mysql/
 /usr/localhost/mysql/bin/mysqld_safe --user=mysql
 
-第十二个安装的是php
+第十二个安装的是libiconv（不安装的php编译过程中报错）
+cd  ../libiconv-1.x.x
+./configure --prefix=/usr/local/
+make && make install
+
+第十三个安装的是php
 cd ../php5.x.x
 ./configure --prefix=/usr/local/php/ --with-config-file-path=/etc/ --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=/usr/local/mysql/ --with-libxml-dir=/usr/local/libxml2/ --with-jpeg-dir=/usr/local/jpeg6/ --with-freetype-dir=/usr/local/freetype/ --with-gd=/usr/local/gd2/ --with-mcrypt=/usr/local/libmcrypt/ --with-mysqli=/usr/local/mysql/bin/mysql_config --enable-soap --enable-mbstring=all --enable-sockets
 make && make install
