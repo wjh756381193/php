@@ -1,6 +1,6 @@
 #！/bin/bash
 #1）获取相关组件
-wget http://cn.php.net/distributions/php-5.4.0.tar.gz
+wget http://cn.php.net/distributions/php-5.4.36.tar.gz
 wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
 wget http://downloads.sourceforge.net/mcrypt/libmcrypt-2.5.8.tar.gz
 wget http://downloads.sourceforge.net/mcrypt/mcrypt-2.6.8.tar.gz
