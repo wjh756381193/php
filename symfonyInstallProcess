@@ -1,0 +1,6 @@
+php -r "readfile('http://symfony.com/installer');" > symfony.phar 	// 读取安装文件到symfony.phar文件中
+php symfony.phar new   myproject/项目路径							// 新建一个项目到myproject文件目录中
+cd myproject/														// 进入到项目的根目录中
+php app/console server:run											// 启动服务
+// 下面这行代码根据具体情况看是否执行，如果没有相应的css文件的时候，执行这句 反之不执行
+php app/console assets:install web	
