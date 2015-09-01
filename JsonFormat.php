@@ -7,7 +7,7 @@
  */
 function arrayRecursive(&$array, $function, $apply_to_keys_also = false)
 {
-    static $recursive_counter = 0;
+    $recursive_counter = 0;
     if (++$recursive_counter > 1000) {
         die('possible deep recursion attack');
     }
@@ -29,15 +29,15 @@ function arrayRecursive(&$array, $function, $apply_to_keys_also = false)
     $recursive_counter--;
 }
 
-    /**************************************************************
- 	 *
- 	 *  将数组转换为JSON字符串（兼容中文）
- 	 *  @param  array   $array      要转换的数组
- 	 *  @return string      转换得到的json字符串
- 	 *  @access public
- 	 *
- 	 ************************************************************
-     */
+/**************************************************************
+ *
+ *  将数组转换为JSON字符串（兼容中文）
+ *  @param  array   $array      要转换的数组
+ *  @return string      转换得到的json字符串
+ *  @access public
+ *
+ ************************************************************
+ */
 function JSON($array) {
     arrayRecursive($array, 'urlencode', true);
     $json = json_encode($array);
