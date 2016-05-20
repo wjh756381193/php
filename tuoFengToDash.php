@@ -1,9 +1,9 @@
 <?php
 /**
- * ½«º¯ÊýÃûµÄÍÕ·åÐ´·¨×ª»»ÎªÏÂ»®ÏßÐ´·¨
+ * å°†å‡½æ•°åçš„é©¼å³°å†™æ³•è½¬æ¢ä¸ºä¸‹åˆ’çº¿å†™æ³•
  * @param $str functionName
- * @return string ×ª»»ºóµÄfunctionName
- * Èç¹û´«ÈëµÄ²ÎÊý·Ç·¨£¬·µ»ØÏàÓ¦µÄ´íÎóÐÅÏ¢
+ * @return string è½¬æ¢åŽçš„functionName
+ * å¦‚æžœä¼ å…¥çš„å‚æ•°éžæ³•ï¼Œè¿”å›žç›¸åº”çš„é”™è¯¯ä¿¡æ¯
  */
 function TuofengToDash($str){
     if(!is_string($str)){
@@ -20,4 +20,4 @@ function TuofengToDash($str){
     $str=preg_replace($pattern,'_$0',$str);
     return strtolower($str).'()';
 }
-echo TuofengToDash('CmdInsertUser');
+echo TuofengToDash('CmdInsertUser'); 
