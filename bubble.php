@@ -1,4 +1,5 @@
 <?php
+
 function select_sort($arr){
     for($i=0;$i<count($arr)-1;$i++){
         for($j=$i+1;$j<count($arr);$j++){
