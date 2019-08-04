@@ -9,6 +9,7 @@ set shiftwidth=4              " 设置自动缩进
 set ts=4					  " 设置tab键有多少个空格
 set noeb                      " 关闭提示音      
 set vb t_vb=                  " 关闭提示音
+set conceallevel = 3
 
 " 设置编码    
 set encoding=UTF-8    
